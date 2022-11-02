@@ -1,100 +1,70 @@
-# REACT COMPONENT BOILERPLATE
+# Getting Started with Create React App
 
-### Generated using react-init
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Build Status](https://travis-ci.org/leandrowd/react-component-boilerplate.svg?branch=master)](https://travis-ci.org/leandrowd/react-component-boilerplate) [![Coverage Status](https://coveralls.io/repos/leandrowd/react-component-boilerplate/badge.svg?branch=master&service=github)](https://coveralls.io/github/leandrowd/react-component-boilerplate?branch=master)
+## Available Scripts
 
-Easy way to start your new react component.
+In the project directory, you can run:
 
-This boilerplayte provides everything you need to start developing and testing your new component. Including:
-- es6/7 support through babel;
-- code linting through eslint;
-- automatic code style for your editor through editorConfig
-- test frameworks using mocha, chai;
-- test coverage using isparta;
-- continuous integration using travis;
-- coverall report
-- badges
-- fast dev cycle using gulp
-- automated releases using npm
+### `npm start`
 
-## Getting started
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### From your terminal:
-- `npm install` // it's taking around ~3min when you run for the first time
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-#### For starting developing
-- `gulp dev`
+### `npm test`
 
-#### For releasing on npm
-- `npm run release`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* Don't forget to update package.json before publishing
+### `npm run build`
 
-## Settings
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-You will find some .dotfiles in the root of this project. Those are the settings for all the tools we are using and they are shared between npm, gulp and the services we are using. Be mindful changing it.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-| File          | Description  |
-| :------------ | :----------- |
-| .babelrc      | babel settings |
-| .editorconfig | code style configs |
-| .eslintrc     | linting settings |
-| .travis.yml   | ci settings for travis |
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Setting up Continuous integration using Travis
+### `npm run eject`
 
-After pushing your repo to bitbucket or github, go to [travis-ci](https://travis-ci.org), link and enable your new repo to be built. Your next git push will trigger the build.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Setting up Test Coverage using Coveralls
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Go to [coveralls](https://coveralls.io), get a token and enable your repo for coverage. Then go back to travis and add your token as an environment variable. Your next build will trigger coverage.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### List of gulp tasks (used for development workflow)
+## Learn More
 
-| Task          | Description  |
-| :------------ | :----------- |
-| default       |
-| clean         | remove generated folders |
-| dev           | runs everything you need and keep watching for changes |
-| lint          | lint js files |
-| build         | clean and build the project  |
-| re-build      | build changed files |
-| tests         | run the tests |
-| watch         | watch for file changes to perform needed actions |
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### List of npm tasks (mostly used from the services)
+### Code Splitting
 
-| Task          | Description  |
-| :------------ | :----------- |
-| postinstall   |
-| start         |
-| lint          | lint js files |
-| build         | build the project |
-| test          | run the tests |
-| tdd           | run the tests and keep watching |
-| coverage      | collect coverage from the tests |
-| coveralls     | sends coverage reports to coveralls |
-| prerelease    | run tests, linting and build prior to release |
-| release       | bump npm version, push to git and publish to npm |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-### Contributing
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### TODOs
-- [x] tests
-- [x] coverage
-- [x] build
-- [x] task for tests
-- [x] task for tests and coverage
-- [x] task for publishing to npm
-- [ ] task for publishing to gh-pages
-- [x] editorConfig
-- [x] coveralls
-- [x] travis
-- [x] eslint
-- [x] add gulp tasks for performing everything
-- [ ] create a template and generator
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
