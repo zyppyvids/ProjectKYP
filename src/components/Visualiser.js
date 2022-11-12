@@ -94,7 +94,7 @@ function Visualiser(props) {
                 animationEnabled: true,
                 exportEnabled: true,
                 title: {
-                  text: "-spiritual schools-"
+                  text: "-sport schools-"
                 },
                 axisY: {
                     includeZero: true
@@ -109,9 +109,37 @@ function Visualiser(props) {
                     <CanvasJSChart options = {options}/>
                 </div>
             </div>
-        } else if(view === "pr"){
+        } else if(view === "spi"){
             var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             var allDataNumbers = data.slice(1, -2).map(function (row) { return row[5]; });
+            
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-spiritual schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='spi form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "pr"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[6]; });
             console.log(allDataNumbers);
             var currentDataPoints = []
             for(let i = 0; i < allDataCities.length; i++)
@@ -137,8 +165,35 @@ function Visualiser(props) {
                     <CanvasJSChart options = {options}/>
                 </div>
             </div>
+        } else if(view === "prof"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[7]; });
+            console.log(allDataNumbers);
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-proffesional schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='prof form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
         }
-        
     }
 
     const loadFileLoadView = () => {

@@ -60,8 +60,16 @@
   border-color: rgb(230, 133, 6);
 }
 
+.spi {
+  border-color: rgb(208, 230, 6);
+}
+
 .pr {
   border-color: rgb(251, 42, 181);
+}
+
+.prof {
+  border-color: rgb(42, 230, 251);
 }
 
 .invert-img {

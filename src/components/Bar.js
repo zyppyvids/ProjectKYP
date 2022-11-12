@@ -14,8 +14,10 @@ function Bar(props) {
             <Nav className="me-auto">
                 {view !== "fl" ? <Nav.Link onClick={() => setView("all")}>-all-</Nav.Link> : null}
                 {view !== "fl" ? <Nav.Link onClick={() => setView("mid")}>-mid schools-</Nav.Link> : null}
-                {view !== "fl" ? <Nav.Link onClick={() => setView("sp")}>-spiritual-</Nav.Link> : null}
+                {view !== "fl" ? <Nav.Link onClick={() => setView("sp")}>-sport-</Nav.Link> : null}
+                {view !== "fl" ? <Nav.Link onClick={() => setView("spi")}>-spiritual-</Nav.Link> : null}
                 {view !== "fl" ? <Nav.Link onClick={() => setView("pr")}>-profiled-</Nav.Link> : null}
+                {view !== "fl" ? <Nav.Link onClick={() => setView("prof")}>-proffesional-</Nav.Link> : null}
             </Nav>
             </Navbar.Collapse>
         </Container>
