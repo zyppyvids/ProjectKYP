@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Papa from "papaparse";
 import FileLoader from "./FileLoader";
+import Bar from "./Bar"
+
+import React, { useState } from "react";
+
 import CanvasJSReact from '../lib/canvasjs.react';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function Visualiser(props) {
-    const {view, setView} = props;
+    // This state will store the current view
+    const [view, setView] = useState("fl");
 
     // This state will store the parsed data
     const [data, setData] = useState([[]]);
@@ -16,85 +19,208 @@ function Visualiser(props) {
     
     // This state stores the file uploaded by the user
     const [file, setFile] = useState("");
-    
-    const handleFileChange = (e, allowedExtensions) => {
-        setError("");
 
-        if (!isValidFile(e, allowedExtensions)) {
-            setError("Please input a [" + allowedExtensions.map((value) => "." + value).join(", ") + "] file!");
-            setView("d");
-            return;
+    const determineView = () => {
+        if(view === "fl"){
+          return loadFileLoadView()
+        } else if(view === "err") {
+            return loadError()
+        } else if(view === "all"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[2]; });
+            
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+			    exportEnabled: true,
+                title: {
+                  text: "-all schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='all form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "mid"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[3]; });
+            
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-middle schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='mid form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "sp"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[4]; });
+            
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-sport schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='sp form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "spi"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[5]; });
+            
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-spiritual schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='spi form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "pr"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[6]; });
+            console.log(allDataNumbers);
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-profiled schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='pr form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
+        } else if(view === "prof"){
+            var allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
+            var allDataNumbers = data.slice(1, -2).map(function (row) { return row[7]; });
+            console.log(allDataNumbers);
+            var currentDataPoints = []
+            for(let i = 0; i < allDataCities.length; i++)
+            {
+                currentDataPoints.push({label: allDataCities[i], y: parseFloat(allDataNumbers[i]) ?? 0});
+            }
+            var options = {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                  text: "-proffesional schools-"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                        type: "column",
+                        dataPoints: currentDataPoints
+                }]
+            }
+            return <div className='vertical-horizontal-center'>
+                <div className='prof form content' style={{ textAlign: "center" }}>
+                    <CanvasJSChart options = {options}/>
+                </div>
+            </div>
         }
-
-        if (!e) {
-            setError("Enter a valid file");
-            setView("d");
-            return; 
-        }
-
-        setFile(e);
-    };
-
-    // This will get called whenever the 'file' variable changes values.
-    // For more info see: https://stackoverflow.com/questions/62376767/how-to-use-async-await-with-react-hooks
-    useEffect(() => {
-        readFile();
-    }, [file])
-
-    useEffect(() => {
-
-    }, [view])
- 
-    const isValidFile = (e, allowedExtensions) => {
-        const fileExtension = e?.type.split("/")[1];
-        if (!allowedExtensions.includes(fileExtension)) {
-            return false;
-        }
-        return true;
     }
 
-    const readFile = () => {
-        if(file)
-        {
-            let reader = new FileReader();
+    const loadFileLoadView = () => {
+        return (
+            <div className='vertical-horizontal-center'>
+                <div className='fileload form content'>
+                    <FileLoader data={data} setData={setData} view={view} setView={setView} error={error} setError={setError} file={file} setFile={setFile}/>
+                </div>
+            </div>
+        );
+    }
 
-            reader.onload = async ({ target }) => {
-                const csv = Papa.parse(target.result, { header: true });
-                const parsedData = csv?.data;
-                const columns = parsedData;
-                setData(columns);
-            };
-            
-            reader.readAsText(file);
-            setView("d");
-        }
+    const loadError = () => {
+        return (
+            <div className='vertical-horizontal-center'>
+                <div className='err form content' style={{ textAlign: "center" }}>
+                    {<h1 style={{textAlign:'center', color:'rgb(243, 80, 80)'}}>{error}</h1>}
+                </div>
+            </div>
+        );
     }
 
     return (
-        //To do: state machine
-        view === "fl" ?
-        <div>
-            <FileLoader handleFileChange={handleFileChange}/>
-        </div> :
-        <div>
-            <div style={{ textAlign: "center" }}>
-                {
-                  // Displays only the error if there is one
-                  error ? error : 
-                  <div>
-                    {
-                      // This is the actual data from the .csv file
-                      data.map((row, rowId) => 
-                      <div key={rowId}>
-                        {
-                        (Object.values(row)).map((value, valId) => !value ? null : (valId === 9 && rowId !== 29 ? <div><div>{(Object.keys(data[0])[valId])}: {value}</div><br/></div> : <div>{(Object.keys(data[0])[valId])}: {value}</div>))
-                        }
-                      </div>)
-                    }
-                  </div>
-                }
-            </div>
-        </div>
+        [
+            <Bar view={view} setView={setView} />,
+            determineView()
+        ]
     );
 }
 
