@@ -72,8 +72,8 @@ function FileLoader(props) {
     return (
     <Container>
         <Form.Group controlId="formFile" className="mb-3">
-            <h1 style={{textAlign:'center', color:'turquoise'}}>-load file-</h1>
-            <h5 style={{textAlign:'center', color:'gray'}}>select the .csv file</h5>
+            <h1 style={{textAlign:'center', color:'turquoise'}}>-зареди файл-</h1>
+            <h5 style={{textAlign:'center', color:'gray'}}>избери .csv файлът</h5>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <Form.Control 
                 onChange={handleLoaded}
