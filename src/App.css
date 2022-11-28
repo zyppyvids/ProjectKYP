@@ -1,3 +1,6 @@
+.body {
+  font-family: Calibri, Optima, Candara, Verdana, Geneva, sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -70,6 +73,18 @@
 
 .prof {
   border-color: rgb(42, 230, 251);
+}
+
+.special {
+  border-color: rgb(42, 52, 251);
+}
+
+.art {
+  border-color: rgb(42, 251, 73);
+}
+
+.src {
+  border-color: rgb(100, 52, 155);
 }
 
 .invert-img {
