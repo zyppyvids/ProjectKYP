@@ -5,86 +5,31 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /*
  * Specific classNames
  */
-.fileload {
-  border-color: turquoise;
+
+.brded {
+  border-color: var(--border-clr);
 }
 
-.all {
-  border-color: plum;
+.logoimg {
+  border-radius: 50%;
+
 }
 
-.mid {
-  border-color: rgb(40, 150, 250);
+.logoimgdiv {
+  border-radius: 50%;
+
+  border: 3px solid var(--border-clr);
 }
 
-.err {
-  border-color: rgb(243, 80, 80);
-}
-
-.sp {
-  border-color: rgb(230, 133, 6);
-}
-
-.spi {
-  border-color: rgb(208, 230, 6);
-}
-
-.pr {
-  border-color: rgb(251, 42, 181);
-}
-
-.prof {
-  border-color: rgb(42, 230, 251);
-}
-
-.special {
-  border-color: rgb(42, 52, 251);
-}
-
-.art {
-  border-color: rgb(42, 251, 73);
-}
-
-.src {
-  border-color: rgb(100, 52, 155);
+.navb {
+  position: fixed;
+  width: 100%;
+  border: 2px solid var(--border-clr);
+  border-radius: 12px;
 }
 
 .invert-img {
@@ -119,4 +64,74 @@
   justify-content: center;
   align-items: center;
   height: 100vh;  
+}
+
+/*
+ * Arrow and its specifix animations
+ */
+
+.arrow-down{
+  width:60px;
+  height:40px;
+  margin:0 0 0 -30px;
+  position:absolute;
+  left:calc(50% + 10px);
+  bottom:0px;
+  animation: arrow 0.5s 1s infinite ease-out alternate;
+  
+}
+
+.arrow-down:hover{
+   animation-play-state: paused;
+}
+
+.left{
+  position:absolute;
+  height:10px;
+  width:40px;
+  background:var(--border-clr);
+  transform:rotate(240deg);
+  top:10px;
+  left:10px;
+  border-radius:4px;
+  transform-origin:5px 50%;
+  animation: leftArrow 0.5s 1s infinite ease-out alternate;
+}
+
+.right{
+  position:absolute;
+  height:10px;
+  width:40px;
+  background:var(--border-clr);
+  transform:rotate(-60deg);
+  top:10px;
+  left:10px;
+  border-radius:4px;
+  transform-origin:5px 50%;
+  animation: rightArrow 0.5s 1s infinite ease-out alternate;
+}
+
+@keyframes arrow{
+  0% {
+    bottom:25%;
+  }
+  100%{
+    bottom:50%;
+  }
+}
+
+@keyframes leftArrow{
+  0% {
+  }
+  100%{
+    transform:rotate(225deg);
+  }
+}
+
+@keyframes rightArrow{
+  0% {
+  }
+  100%{
+    transform:rotate(-45deg);
+  }
 }

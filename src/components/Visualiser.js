@@ -23,12 +23,20 @@ function Visualiser(props) {
 
     const determineView = () => {
         if(view === "fl"){
-          return loadFileLoadView()
+            document.documentElement.style.setProperty('--border-clr','turquoise');
+
+            return loadFileLoadView()
         } else if(view === "err") {
+            document.documentElement.style.setProperty('--border-clr','rgb(243, 80, 80)');
+            
             return loadError()
         } else if(view === "src") {
+            document.documentElement.style.setProperty('--border-clr','rgb(100, 52, 155)');
+
             return loadSources();
         } else if(view === "all"){
+            document.documentElement.style.setProperty('--border-clr','plum');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[2]; });
             
@@ -56,12 +64,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='all form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={2} options = {options}/>
                 </div>
             </div>
         } else if(view === "mid"){
-            
+            document.documentElement.style.setProperty('--border-clr','rgb(40, 150, 250)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[3]; });
             
@@ -89,11 +98,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='mid form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={3} options = {options}/>
                 </div>
             </div>
         } else if(view === "sp"){
+            document.documentElement.style.setProperty('--border-clr','rgb(230, 133, 6)');
+            
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[4]; });
             
@@ -121,11 +132,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='sp form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={4} options = {options}/>
                 </div>
             </div>
         } else if(view === "spi"){
+            document.documentElement.style.setProperty('--border-clr','rgb(208, 230, 6)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[5]; });
             
@@ -153,11 +166,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='spi form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={5} options = {options}/>
                 </div>
             </div>
         } else if(view === "pr"){
+            document.documentElement.style.setProperty('--border-clr','rgb(251, 42, 181)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[6]; });
             console.log(allDataNumbers);
@@ -185,11 +200,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='pr form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={6} options = {options}/>
                 </div>
             </div>
         } else if(view === "prof"){
+            document.documentElement.style.setProperty('--border-clr','rgb(42, 230, 251)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[7]; });
             console.log(allDataNumbers);
@@ -217,11 +234,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='prof form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={7} options = {options}/>
                 </div>
             </div>
         } else if(view === "special") {
+            document.documentElement.style.setProperty('--border-clr','rgb(42, 52, 251)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[8]; });
 
@@ -249,11 +268,13 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='special form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={8} options = {options}/>
                 </div>
             </div>
         } else if(view === "art") {
+            document.documentElement.style.setProperty('--border-clr','rgb(42, 251, 73)');
+
             let allDataCities = data.slice(1, -2).map(function (row) { return row[1]; });
             let allDataNumbers = data.slice(1, -2).map(function (row) { return row[9]; });
 
@@ -281,7 +302,7 @@ function Visualiser(props) {
                 }]
             }
             return <div className='vertical-horizontal-center'>
-                <div className='art form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     <CanvasJSChart key={9} options = {options}/>
                 </div>
             </div>
@@ -291,7 +312,7 @@ function Visualiser(props) {
     const loadFileLoadView = () => {
         return (
             <div className='vertical-horizontal-center'>
-                <div className='fileload form content'>
+                <div className='brded form content'>
                     <FileLoader data={data} setData={setData} view={view} setView={setView} error={error} setError={setError} file={file} setFile={setFile}/>
                 </div>
             </div>
@@ -301,7 +322,7 @@ function Visualiser(props) {
     const loadError = () => {
         return (
             <div className='vertical-horizontal-center'>
-                <div className='err form content' style={{ textAlign: "center" }}>
+                <div className='brded form content' style={{ textAlign: "center" }}>
                     {<h1 style={{textAlign:'center', color:'rgb(243, 80, 80)'}}>{error}</h1>}
                 </div>
             </div>
@@ -311,7 +332,7 @@ function Visualiser(props) {
     const loadSources = () => {
         return (
             <div className='vertical-horizontal-center'>
-                <div className='src form content'>
+                <div className='brded form content'>
                     <Sources/>
                 </div>
             </div>
