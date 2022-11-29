@@ -43,48 +43,26 @@
 /*
  * Specific classNames
  */
-.fileload {
-  border-color: turquoise;
+
+.brded {
+  border-color: var(--border-clr);
 }
 
-.all {
-  border-color: plum;
+.logoimg {
+  background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_390552.png&f=1&nofb=1&ipt=ca7e52113e428375f0c776f775137e52260edc552f3dc48c887896c8664e1ef2&ipo=images");
+  border-radius: 50%;
 }
 
-.mid {
-  border-color: rgb(40, 150, 250);
+.logoimgdiv {
+  background: var(--border-clr);
+  border-radius: 50%;
 }
 
-.err {
-  border-color: rgb(243, 80, 80);
-}
-
-.sp {
-  border-color: rgb(230, 133, 6);
-}
-
-.spi {
-  border-color: rgb(208, 230, 6);
-}
-
-.pr {
-  border-color: rgb(251, 42, 181);
-}
-
-.prof {
-  border-color: rgb(42, 230, 251);
-}
-
-.special {
-  border-color: rgb(42, 52, 251);
-}
-
-.art {
-  border-color: rgb(42, 251, 73);
-}
-
-.src {
-  border-color: rgb(100, 52, 155);
+.navb {
+  position: fixed;
+  width: 100%;
+  border-bottom: 2px solid var(--border-clr);
+  border-radius: 12px;
 }
 
 .invert-img {

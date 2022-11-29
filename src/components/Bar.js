@@ -6,9 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 function Bar(props) {
     const {view, setView} = props;
     return (
-    <Navbar bg="light" variant="light" expand="sm" style={{ position: 'fixed', width: '100%', 'border-bottom': '2px solid black', 'border-radius': '12px' }}>
+    <Navbar bg="light" variant="light" expand="sm" className="navb">
         <Container>
-            <Navbar.Brand><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_390552.png&f=1&nofb=1&ipt=ca7e52113e428375f0c776f775137e52260edc552f3dc48c887896c8664e1ef2&ipo=images" width={50} height={50} alt="|Училищни данни|"></img></Navbar.Brand>
+            <Navbar.Brand>
+                <div className="logoimgdiv">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_390552.png&f=1&nofb=1&ipt=ca7e52113e428375f0c776f775137e52260edc552f3dc48c887896c8664e1ef2&ipo=images" width={50} height={50} alt="|Училищни данни|" className="logoimg"></img>
+                </div>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
