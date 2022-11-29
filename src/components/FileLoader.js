@@ -55,13 +55,13 @@ function FileLoader(props) {
         props.setError("");
 
         if (!isValidFile(e, allowedExtensions)) {
-            props.setError("Please input a [" + allowedExtensions.map((value) => "." + value).join(", ") + "] file!");
+            props.setError("Моля използвай [" + allowedExtensions.map((value) => "." + value).join(", ") + "] файл!");
             props.setView("err");
             return;
         }
 
         if (!e) {
-            props.setError("Enter a valid file");
+            props.setError("Моля избери файл!");
             props.setView("err");
             return; 
         }
