@@ -15,18 +15,18 @@ function Bar(props) {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("all")}>-всички-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("mid")}>-средни-</Nav.Link> : null}
-                {view !== "fl" && view !== "err"? <Nav.Link onClick={() => setView("sp")}>-спортни-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("spi")}>-духовни-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("pr")}>-профилирани-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("prof")}>-професионални-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("special")}>-специални-</Nav.Link> : null}
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("art")}>-изкуства-</Nav.Link> : null}
+            <Nav className="me-auto" defaultActiveKey="all">
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="all" onClick={() => setView("all")}>-всички-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="mid" onClick={() => setView("mid")}>-средни-</Nav.Link> : null}
+                {view !== "fl" && view !== "err"? <Nav.Link eventKey="sp" onClick={() => setView("sp")}>-спортни-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="spi" onClick={() => setView("spi")}>-духовни-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="pr" onClick={() => setView("pr")}>-профилирани-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="prof" onClick={() => setView("prof")}>-професионални-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="special" onClick={() => setView("special")}>-специални-</Nav.Link> : null}
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="art" onClick={() => setView("art")}>-изкуства-</Nav.Link> : null}
             </Nav>
-            <Nav>
-                {view !== "fl" && view !== "err" ? <Nav.Link onClick={() => setView("src")}>|източници|</Nav.Link> : null}
+            <Nav defaultActiveKey="all">
+                {view !== "fl" && view !== "err" ? <Nav.Link eventKey="src" onClick={() => setView("src")}>|източници|</Nav.Link> : null}
             </Nav>
             </Navbar.Collapse>
         </Container>

@@ -75,6 +75,10 @@ function FileLoader(props) {
             <h1 style={{textAlign:'center', color:'turquoise'}}>-зареди файл-</h1>
             <h5 style={{textAlign:'center', color:'gray'}}>избери .csv файлът</h5>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div class="arrow-down">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
             <Form.Control 
                 onChange={handleLoaded}
                 id="csvInput"
