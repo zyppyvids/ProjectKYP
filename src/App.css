@@ -70,7 +70,7 @@
  * Arrow and its specifix animations
  */
 
-.arrow-down{
+.arrow-down {
   width:60px;
   height:40px;
   margin:0 0 0 -30px;
@@ -78,14 +78,13 @@
   left:calc(50% + 10px);
   bottom:0px;
   animation: arrow 0.5s 1s infinite ease-out alternate;
-  
 }
 
-.arrow-down:hover{
+.arrow-down:hover {
    animation-play-state: paused;
 }
 
-.left{
+.left {
   position:absolute;
   height:10px;
   width:40px;
@@ -98,7 +97,7 @@
   animation: leftArrow 0.5s 1s infinite ease-out alternate;
 }
 
-.right{
+.right {
   position:absolute;
   height:10px;
   width:40px;
@@ -111,7 +110,7 @@
   animation: rightArrow 0.5s 1s infinite ease-out alternate;
 }
 
-@keyframes arrow{
+@keyframes arrow {
   0% {
     bottom:25%;
   }
@@ -120,7 +119,7 @@
   }
 }
 
-@keyframes leftArrow{
+@keyframes leftArrow {
   0% {
   }
   100%{
@@ -128,7 +127,7 @@
   }
 }
 
-@keyframes rightArrow{
+@keyframes rightArrow {
   0% {
   }
   100%{
